@@ -1,9 +1,15 @@
+import sys
+from pathlib import Path
+
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
+
 import unittest
 import math
 from src.color import Color
 
 class TestColor(unittest.TestCase):
-    
+
     def test_parse_full_hex_string(self):
         pass
 
