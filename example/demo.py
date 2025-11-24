@@ -20,7 +20,7 @@ def main() -> None:
     print('\n' + '=' * 80 + '\n')
 
     # Example for using the CSS colors API
-    print('Getting the brightest color from the CSS Colors API:')
+    print('Getting the brightest color from all the colors from the CSS Colors API:')
     url = "https://csscolorsapi.com/api/colors"
     try:
         colors = ColorFactory.from_css_colors_api(url)
