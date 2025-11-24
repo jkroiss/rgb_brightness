@@ -15,7 +15,7 @@ class TestColorFactory(unittest.TestCase):
     '''Tests for the ColorFactory-class.'''
     def test_from_hex_list(self):
         '''Tests the correct creation of Color-objects from a list of hex-strings.'''
-        hex_list = ['#AABBCC', '#123456', '#FFFFFF']
+        hex_list = ["#AABBCC", "#154331", "#A0B1C2", "#000000", "#FFFFFF"]
         colors = ColorFactory.from_hex_list(hex_list)
         self.assertEqual(len(colors), 3)
         for element in colors:
