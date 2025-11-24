@@ -18,7 +18,7 @@ class TestBrightnessComparer(unittest.TestCase):
     '''
     def test_get_brightest_color(self):
         '''Tests the retrieval of the brightest color.'''
-        hex_list = ['#AABBCC', '#DDEEFF', '#FFFFFF']
+        hex_list = ["#AABBCC", "#154331", "#A0B1C2", "#000000", "#FFFFFF"]
         colors = ColorFactory.from_hex_list(hex_list)
         brightest = BrightnessComparer.get_brightest_color(colors)
         self.assertEqual(brightest.hex_string.upper(), '#FFFFFF')
