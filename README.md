@@ -33,7 +33,7 @@ BrightnessComparer.print_brightest_color(colors)
 Make sure that the current directory is the root directory.
 
 ```bash
-python examples/demo.py
+python example/demo.py
 ````
 
 ## Run tests
