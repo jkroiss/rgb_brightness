@@ -20,7 +20,7 @@ def main() -> None:
     print('\n' + '=' * 80 + '\n')
 
     # Example for using the CSS colors API
-    print('Getting the brightest color from the CSS colors API:')
+    print('Getting the brightest color from the CSS Colors API:')
     url = "https://csscolorsapi.com/api/colors"
     try:
         colors = ColorFactory.from_css_colors_api(url)
@@ -30,7 +30,7 @@ def main() -> None:
     print('\n' + '=' * 80 + '\n')
 
     # Example for using the CSS colors API and only retrieving the blue colors
-    print('Getting the brightest color from a group from the CSS colors API:')
+    print('Getting the brightest color from a group from the CSS Colors API:')
     url = "https://csscolorsapi.com/api/colors/group/blue"
     try:
         colors = ColorFactory.from_css_colors_api(url)
@@ -40,7 +40,7 @@ def main() -> None:
     print('\n' + '=' * 80 + '\n')
 
     # Example for using the CSS colors API and only retrieving a single color
-    print('Getting a single color from the CSS colors API:')
+    print('Getting a single color from the CSS Colors API:')
     url = "https://csscolorsapi.com/api/colors/CadetBlue"
     try:
         colors = ColorFactory.from_css_colors_api(url)
@@ -50,7 +50,7 @@ def main() -> None:
     print('\n' + '=' * 80 + '\n')
 
     # Example for using the CSS colors API and only retrieving the dark colors
-    print('Getting the brightest color from a theme from the CSS colors API:')
+    print('Getting the brightest color from a theme from the CSS Colors API:')
     url = "https://csscolorsapi.com/api/colors/theme/dark"
     try:
         colors = ColorFactory.from_css_colors_api(url)
