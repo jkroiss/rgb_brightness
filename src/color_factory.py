@@ -35,7 +35,11 @@ class ColorFactory:
             req = request.Request(url, headers={'User-Agent': 'BrightnessComparer'})
             with request.urlopen(req, timeout=10, context=context) as response:
                 data = response.read().decode('utf-8')
-                colors = json.loads(data)['colors']
+                loaded_data = json.loads(data)
+                if 'colors' in loaded_data:
+                    colors = json.loads(data)['colors']
+                elif 'data' in loaded_data:
+                    colors = [loaded_data['data']]
         except URLError as e:
             raise ValueError(f"Failed to get data from the API: {e}") from e
         
