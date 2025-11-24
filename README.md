@@ -44,4 +44,4 @@ python -m unittest
 ```
 
 ## Requirements
-Python 3.8+, no addition external dependencies
+Python 3.8+, no additional external dependencies
