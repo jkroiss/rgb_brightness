@@ -1,2 +1,2 @@
-#For this project, only the Python standard library was used as specified in the task description.
-#No external packages are required.
+# For this project, only the Python standard library was used as specified in the task description.
+# No external packages are required.
