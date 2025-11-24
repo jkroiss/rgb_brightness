@@ -52,5 +52,15 @@ def main() -> None:
         print(f"Could not retrieve colors from the API: {e}")
     print('=============================================')
 
+    # Example for using the CSS colors API and only retrieving the dark colors
+    print('Getting the brightest color from a theme from the CSS colors API:')
+    url = "https://csscolorsapi.com/api/colors/theme/dark"
+    try:
+        colors = ColorFactory.from_css_colors_api(url)
+        BrightnessComparer.print_brightest_color(colors)
+    except ValueError as e:
+        print(f"Could not retrieve colors from the API: {e}")
+    print('=============================================')
+
 if __name__ == "__main__":
     main()
