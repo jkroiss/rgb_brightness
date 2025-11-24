@@ -6,7 +6,6 @@ sys.path.insert(0, str(project_root))
 
 from src.brightness_comparer import BrightnessComparer
 from src.color_factory import ColorFactory
-from src.color import Color
 
 def main():
     '''Demonstration of how the brightness comparison works.
