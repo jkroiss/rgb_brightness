@@ -37,7 +37,7 @@ class ColorFactory:
                 data = response.read().decode('utf-8')
                 loaded_data = json.loads(data)
                 if 'colors' in loaded_data:
-                    colors = json.loads(data)['colors']
+                    colors = loaded_data['colors']
                 elif 'data' in loaded_data:
                     colors = [loaded_data['data']]
         except URLError as e:
