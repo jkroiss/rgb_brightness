@@ -34,7 +34,7 @@ class TestColorFactory(unittest.TestCase):
         self.assertEqual(len(colors), len(colors_from_api))
         for element in colors:
             self.assertIsInstance(element, Color)
-
+    
     def test_from_css_colors_api_with_invalid_url(self):
         '''Tests the Error handling when using an invalid url.'''
         url = "https://invalid_test_url_for_from_css_colors_api_1337_42.com/api/colors"
@@ -42,10 +42,10 @@ class TestColorFactory(unittest.TestCase):
             ColorFactory.from_css_colors_api(url)
 
     def test_from_css_colors_api_with_invalid_json_format(self):
-        '''Tests the Error handling when using an invalid json format.'''
-        url = "https://www.example.com"
-        with self.assertRaises(json.JSONDecodeError):
-            ColorFactory.from_css_colors_api(url)
+       '''Tests the Error handling when using an invalid json format.'''
+       url = "https://www.example.com"
+       with self.assertRaises(json.JSONDecodeError):
+           ColorFactory.from_css_colors_api(url)
 
 if __name__ == '__main__':
     unittest.main()
