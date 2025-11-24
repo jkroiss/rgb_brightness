@@ -10,7 +10,7 @@ from src.color_factory import ColorFactory
 def main():
     '''Demonstration of how the brightness comparison works.
     
-    Note: In both cases, the brightes color should be #FFFFFF.
+    Note: In both cases, the brightest color should be #FFFFFF.
     '''
 
     #Example for using a hex-list
