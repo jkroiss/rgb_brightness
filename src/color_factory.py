@@ -12,13 +12,13 @@ class ColorFactory:
     """Factory-type class for creating collections of Color-objects from different sources."""
     @staticmethod
     def from_hex_list(color_list: List[str]) -> List[Color]:
-        """Function that creates a list of Color-objects from a list of hex-strings."""
+        """Creates a list of Color-objects from a list of hex-strings."""
         return [Color(hex_string) for hex_string in color_list] 
 
     @staticmethod
     def from_css_colors_api(url: str) -> List[Color]:
         """
-        Function that creates a list of Color-objects from the CSS Colors API.
+        Creates a list of Color-objects from the CSS Colors API.
 
         Args:
             url (str): The URL of the CSS Colors API.
