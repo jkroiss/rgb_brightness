@@ -18,10 +18,10 @@ class ColorFactory:
     @staticmethod
     def from_css_colors_api(url: str) -> List[Color]:
         """
-        Function that creates a list of Color-objects from the CSS colors API.
+        Function that creates a list of Color-objects from the CSS Colors API.
 
         Args:
-            url (str): The url of the CSS colors API.
+            url (str): The url of the CSS Colors API.
         
         Returns: 
             List[Color]: The list of the created Color-objects.
