@@ -30,11 +30,15 @@ BrightnessComparer.print_brightest_color(colors)
 ````
 
 ## Run demo
+Make sure that the current directory is the root directory.
+
 ```bash
 python examples/demo.py
 ````
 
 ## Run tests
+Make sure that the current directory is the root directory.
+
 ```bash
 python -m unittest 
 ```
