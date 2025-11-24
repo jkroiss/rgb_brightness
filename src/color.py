@@ -42,7 +42,8 @@ class Color:
         color_brightness = math.sqrt(0.241 * self.r**2 + 0.691 * self.g**2 + 0.068 * self.b**2)
         return color_brightness
 
-    def _parse_hex_string(self, hex_string: str) -> Tuple[int, int, int]:
+    @staticmethod
+    def _parse_hex_string(hex_string: str) -> Tuple[int, int, int]:
         """
         Converts a string containing a hexadecimal representation of rgb-values into its integer components.
 
