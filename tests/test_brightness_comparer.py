@@ -5,8 +5,7 @@ project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
 import unittest
-import json
-from urllib import request
+
 from src.brightness_comparer import BrightnessComparer
 from src.color_factory import ColorFactory
 from src.color import Color
