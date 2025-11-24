@@ -18,7 +18,7 @@ class Color:
     """
 
     def __init__(self, hex_string: str, name: str | None = None, theme: str | None = None, group: str | None = None, 
-                 rgb_string: str | None = None):
+                 rgb_string: str | None = None) -> None:
         '''Initializes a Color-object with optional metadata.'''
 
         self.hex_string = hex_string
