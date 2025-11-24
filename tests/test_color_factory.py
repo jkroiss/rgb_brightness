@@ -11,7 +11,9 @@ from src.color_factory import ColorFactory
 from src.color import Color
 
 class TestColorFactory(unittest.TestCase):
+    '''Tests for the ColorFactory-class.'''
     def test_from_hex_list(self):
+        '''Tests the correct creation of Color-objects from a list of hex-strings.'''
         hex_list = ['#AABBCC', '#123456', '#FFFFFF']
         colors = ColorFactory.from_hex_list(hex_list)
         self.assertEqual(len(colors), 3)
@@ -19,6 +21,7 @@ class TestColorFactory(unittest.TestCase):
             self.assertIsInstance(element, Color)
 
     def test_from_css_colors_api(self):
+        '''Tests the correct creation of Color-objects from the css-colors API.'''
         url = "https://csscolorsapi.com/api/colors"
         req = request.Request(
                 url, 
