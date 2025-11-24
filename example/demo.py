@@ -7,7 +7,7 @@ sys.path.insert(0, str(project_root))
 from src.brightness_comparer import BrightnessComparer
 from src.color_factory import ColorFactory
 
-def main():
+def main() -> None:
     '''Demonstration of how the brightness comparison works.
     
     Note: In both cases, the brightest color should be #FFFFFF.
