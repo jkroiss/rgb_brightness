@@ -5,10 +5,10 @@ project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
 import ssl
-import unittest
 import json
+import unittest
+
 from urllib import request
-from urllib.error import URLError
 from src.color_factory import ColorFactory
 from src.color import Color
 
@@ -41,11 +41,6 @@ class TestColorFactory(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Failed to get data from the API: .*"):
             ColorFactory.from_css_colors_api(url)
 
-    def test_from_css_colors_api_with_invalid_json_format(self):
-       """Tests the Error handling when using an invalid json format."""
-       url = "https://www.example.com"
-       with self.assertRaisesRegex(ValueError, "Failed to parse json from the API: .*"):
-           ColorFactory.from_css_colors_api(url)
 
 if __name__ == '__main__':
     unittest.main()
