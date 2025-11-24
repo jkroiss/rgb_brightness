@@ -8,10 +8,7 @@ from src.brightness_comparer import BrightnessComparer
 from src.color_factory import ColorFactory
 
 def main() -> None:
-    '''Demonstration of how the brightness comparison works.
-    
-    Note: In both cases, the brightest color should be #FFFFFF.
-    '''
+    """Demonstration of how the brightness comparison works."""
 
     print('\n' + '=' * 80 + '\n')
 
