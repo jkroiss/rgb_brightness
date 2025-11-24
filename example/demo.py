@@ -13,14 +13,14 @@ def main() -> None:
     Note: In both cases, the brightest color should be #FFFFFF.
     '''
 
-    print('=============================================')
+    print('\n' + '=' * 80 + '\n')
 
     # Example for using a hex-list
     print('Getting the brightest color from a hex-list:')
     hex_list = ["#AABBCC", "#154331", "#A0B1C2", "#000000", "#FFFFFF"]
     colors = ColorFactory.from_hex_list(hex_list)
     BrightnessComparer.print_brightest_color(colors)
-    print('=============================================')
+    print('\n' + '=' * 80 + '\n')
 
     # Example for using the CSS colors API
     print('Getting the brightest color from the CSS colors API:')
@@ -30,7 +30,7 @@ def main() -> None:
         BrightnessComparer.print_brightest_color(colors)
     except ValueError as e:
         print(f"Could not retrieve colors from the API: {e}")
-    print('=============================================')
+    print('\n' + '=' * 80 + '\n')
 
     # Example for using the CSS colors API and only retrieving the blue colors
     print('Getting the brightest color from a group from the CSS colors API:')
@@ -40,7 +40,7 @@ def main() -> None:
         BrightnessComparer.print_brightest_color(colors)
     except ValueError as e:
         print(f"Could not retrieve colors from the API: {e}")
-    print('=============================================')
+    print('\n' + '=' * 80 + '\n')
 
     # Example for using the CSS colors API and only retrieving a single color
     print('Getting a single color from the CSS colors API:')
@@ -50,7 +50,7 @@ def main() -> None:
         BrightnessComparer.print_brightest_color(colors)
     except ValueError as e:
         print(f"Could not retrieve colors from the API: {e}")
-    print('=============================================')
+    print('\n' + '=' * 80 + '\n')
 
     # Example for using the CSS colors API and only retrieving the dark colors
     print('Getting the brightest color from a theme from the CSS colors API:')
@@ -60,7 +60,7 @@ def main() -> None:
         BrightnessComparer.print_brightest_color(colors)
     except ValueError as e:
         print(f"Could not retrieve colors from the API: {e}")
-    print('=============================================')
+    print('\n' + '=' * 80 + '\n')
 
 if __name__ == "__main__":
     main()
