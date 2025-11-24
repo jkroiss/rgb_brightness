@@ -58,6 +58,7 @@ class Color:
             Tuple[int, int, int]: The rgb-values of the color as integers. 
 
         Raises:
+            ValueError: If the sring contains an invalid character.
             ValueError: If the string does no contain a supported hexadecimal representation.
         '''
         hex_string = hex_string.strip('#').upper().strip()
