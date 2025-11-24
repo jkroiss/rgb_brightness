@@ -14,7 +14,7 @@ from src.color import Color
 
 class TestColorFactory(unittest.TestCase):
     """Tests for the ColorFactory-class."""
-    def test_from_hex_list(self):
+    def test_from_hex_list(self) -> None:
         """Tests the correct creation of Color-objects from a list of rgb-values in hexadecimal representation."""
         hex_list = ["#AABBCC", "#154331", "#A0B1C2", "#000000", "#FFFFFF"]
         colors = ColorFactory.from_hex_list(hex_list)
@@ -22,7 +22,7 @@ class TestColorFactory(unittest.TestCase):
         for element in colors:
             self.assertIsInstance(element, Color)
 
-    def test_from_css_colors_api(self):
+    def test_from_css_colors_api(self) -> None:
         """Tests the correct creation of Color-objects from the css-colors API."""
         url = "https://csscolorsapi.com/api/colors" 
         # Note: macOS workaround for SSL certificate verification; local development only
@@ -36,7 +36,7 @@ class TestColorFactory(unittest.TestCase):
         for element in colors:
             self.assertIsInstance(element, Color)
     
-    def test_from_css_colors_api_with_invalid_url(self):
+    def test_from_css_colors_api_with_invalid_url(self) -> None:
         """Tests the Error handling when using an invalid url."""
         url = "https://invalid_test_url_for_from_css_colors_api_1337_42.com/api/colors"
         with self.assertRaisesRegex(ValueError, "Failed to get data from the API: .*"):
