@@ -62,6 +62,10 @@ class Color:
         '''
         hex_string = hex_string.strip('#').upper().strip()
 
+        for char in hex_string:
+            if char not in '0123456789ABCDEF':
+                raise ValueError("Invalid hexadecimal representation.")
+
         if len(hex_string) == 3:
             hex_string = ''.join([hex_char*2 for hex_char in hex_string])
         
