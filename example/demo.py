@@ -13,13 +13,13 @@ def main() -> None:
     Note: In both cases, the brightest color should be #FFFFFF.
     '''
 
-    #Example for using a hex-list
+    # Example for using a hex-list
     print('Getting the brightest color from a hex-list:')
     hex_list = ["#AABBCC", "#154331", "#A0B1C2", "#000000", "#FFFFFF"]
     colors = ColorFactory.from_hex_list(hex_list)
     BrightnessComparer.print_brightest_color(colors)
 
-    #Example for using the CSS colors API
+    # Example for using the CSS colors API
     print('Getting the brightest color from the CSS colors API:')
     url = "https://csscolorsapi.com/api/colors"
     colors = ColorFactory.from_css_colors_api(url)
