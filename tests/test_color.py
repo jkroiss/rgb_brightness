@@ -9,8 +9,9 @@ import math
 from src.color import Color
 
 class TestColor(unittest.TestCase):
-
+    '''Tests for the Color-class.'''
     def test_parse_full_hex_string(self):
+        '''Tests the parsing of a string containing a full hexadecimal representaton of an RGB-value.'''
         hex_string = '#AABBCC'
         color = Color(hex_string)
         self.assertEqual(color.r, 170)
@@ -18,6 +19,7 @@ class TestColor(unittest.TestCase):
         self.assertEqual(color.b, 204)
 
     def test_parse_short_hex_string(self):
+        '''Tests the parsing of a string containing a shortened hexadecimal representaton of an RGB-value.'''
         hex_string = '#ABC'
         color = Color(hex_string)
         self.assertEqual(color.r, 170)
@@ -25,6 +27,7 @@ class TestColor(unittest.TestCase):
         self.assertEqual(color.b, 204)
 
     def test_parse_hex_string_without_hash(self):
+        '''Tests the parsing of a hexadecimal string representing RGB-values without the leading hash.'''
         hex_string = 'AABBCC'
         color = Color(hex_string)
         self.assertEqual(color.r, 170)
@@ -32,10 +35,12 @@ class TestColor(unittest.TestCase):
         self.assertEqual(color.b, 204)
 
     def test_invalid_hex_string_characters(self):
+        '''Tests Error handling for strings with charcters outside of the hexadecimal range.'''
         with self.assertRaisesRegex(ValueError, "Invalid hexadecimal representation."):
             Color('#JJJJJJ')
     
     def test_invalid_hex_string_length(self):
+        '''Tests Error handling for strings of incorrect lengths (i.e. not 3 or 6 hexadecimal digits)'''
         with self.assertRaisesRegex(ValueError, "Incorrect hexadecimal representation of RGB-values."):
             Color('#1A')
         
@@ -43,6 +48,7 @@ class TestColor(unittest.TestCase):
             Color('#1234567')
 
     def test_brightness_calculation(self):
+        '''Tests the brightness calculation.'''
         color = Color('#AABBCC')
         r = 170
         g = 187
@@ -51,6 +57,7 @@ class TestColor(unittest.TestCase):
         self.assertAlmostEqual(color.get_brightness(), expected_brightness)
 
     def test_optional_attributes(self):
+        '''Tests whether the optional attributes are set correctly.'''
         color = Color(
             '#AABBCC',
             name='Test Color',
@@ -65,8 +72,4 @@ class TestColor(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    num = ' zz '
-    print(len(num))
-    print(len(num.strip()))
     unittest.main()
-    print(Color('#ZZZZZZZ').r)
