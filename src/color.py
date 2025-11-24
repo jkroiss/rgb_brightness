@@ -11,9 +11,6 @@ class Color:
         Args:
             Initializes a Color-object with optional metadata.
             hex_string (str): Hexadecimal string representing the actual color.
-            r (int): Red color component.
-            g (int): Green color component.
-            b (int): Blue color component.
             name (str | None): Optional name of the color.
             theme (str | None): Optional theme of the color.
             group (str | None): Optional group of the color.
