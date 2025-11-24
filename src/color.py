@@ -60,7 +60,7 @@ class Color:
         Raises:
             ValueError: If the string does no contain a supported hexadecimal representation.
         '''
-        hex_string = hex_string.strip('#').upper()
+        hex_string = hex_string.strip('#').upper().strip()
 
         if len(hex_string) == 3:
             hex_string = ''.join([hex_char*2 for hex_char in hex_string])
