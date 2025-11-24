@@ -22,8 +22,11 @@ def main() -> None:
     # Example for using the CSS colors API
     print('Getting the brightest color from the CSS colors API:')
     url = "https://csscolorsapi.com/api/colors"
-    colors = ColorFactory.from_css_colors_api(url)
-    BrightnessComparer.print_brightest_color(colors)
+    try:
+        colors = ColorFactory.from_css_colors_api(url)
+        BrightnessComparer.print_brightest_color(colors)
+    except ValueError as e:
+        print(f"Could not retrieve colors from the API: {e}")
 
 if __name__ == "__main__":
     main()
