@@ -21,13 +21,13 @@ class ColorFactory:
         Function that creates a list of Color-objects from the CSS Colors API.
 
         Args:
-            url (str): The url of the CSS Colors API.
+            url (str): The URL of the CSS Colors API.
         
         Returns: 
             List[Color]: The list of the created Color-objects.
 
         Raises: 
-            ValueError: If the url is invalid.
+            ValueError: If the URL is invalid.
         """
         try:
             # Note: macOS workaround for SSL certificate verification; local development only
