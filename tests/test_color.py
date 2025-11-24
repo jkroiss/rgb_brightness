@@ -11,21 +11,62 @@ from src.color import Color
 class TestColor(unittest.TestCase):
 
     def test_parse_full_hex_string(self):
-        pass
+        hex_string = '#AABBCC'
+        color = Color(hex_string)
+        self.assertEqual(color.r, 170)
+        self.assertEqual(color.g, 187)
+        self.assertEqual(color.b, 204)
 
-    def pass_short_hext_string(self):
-        pass
+    def test_parse_short_hex_string(self):
+        hex_string = '#ABC'
+        color = Color(hex_string)
+        self.assertEqual(color.r, 170)
+        self.assertEqual(color.g, 187)
+        self.assertEqual(color.b, 204)
 
-    def test_invalid_hey_string(self):
-        pass
+    def test_parse_hex_string_without_hash(self):
+        hex_string = 'AABBCC'
+        color = Color(hex_string)
+        self.assertEqual(color.r, 170)
+        self.assertEqual(color.g, 187)
+        self.assertEqual(color.b, 204)
+
+    def test_invalid_hex_string_characters(self):
+        with self.assertRaisesRegex(ValueError, "Invalid hexadecimal representation."):
+            Color('#JJJJJJ')
+    
+    def test_invalid_hex_string_length(self):
+        with self.assertRaisesRegex(ValueError, "Incorrect hexadecimal representation of RGB-values."):
+            Color('#1A')
+        
+        with self.assertRaisesRegex(ValueError, "Incorrect hexadecimal representation of RGB-values."):
+            Color('#1234567')
 
     def test_brightness_calculation(self):
-        pass
+        color = Color('#AABBCC')
+        r = 170
+        g = 187
+        b = 204
+        expected_brightness = math.sqrt(0.241 * r**2 + 0.691 * g**2 + 0.068 * b**2)
+        self.assertAlmostEqual(color.get_brightness(), expected_brightness)
 
     def test_optional_attributes(self):
-        pass
-
+        color = Color(
+            '#AABBCC',
+            name='Test Color',
+            theme='Test Theme',
+            group='Test Group',
+            rgb_string='170,187,204' 
+        )
+        self.assertEqual(color.name, 'Test Color')
+        self.assertEqual(color.theme, 'Test Theme')
+        self.assertEqual(color.group, 'Test Group')
+        self.assertEqual(color.rgb_string, '170,187,204')
 
 
 if __name__ == '__main__':
+    num = ' zz '
+    print(len(num))
+    print(len(num.strip()))
     unittest.main()
+    print(Color('#ZZZZZZZ').r)
