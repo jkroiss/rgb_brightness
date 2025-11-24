@@ -41,10 +41,10 @@ class TestColor(unittest.TestCase):
     
     def test_invalid_hex_string_length(self):
         """Tests Error handling for strings of incorrect lengths (i.e. not 3 or 6 hexadecimal digits)"""
-        with self.assertRaisesRegex(ValueError, "Incorrect hexadecimal representation of RGB-values."):
+        with self.assertRaisesRegex(ValueError, "Incorrect hexadecimal representation of RGB-values\."):
             Color('#1A')
         
-        with self.assertRaisesRegex(ValueError, "Incorrect hexadecimal representation of RGB-values."):
+        with self.assertRaisesRegex(ValueError, "Incorrect hexadecimal representation of RGB-values\."):
             Color('#1234567')
 
     def test_brightness_calculation(self):
