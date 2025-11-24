@@ -4,7 +4,7 @@ A little application to find the brightest color in a collection of colors repre
 
 ## Description
 
-This projects demonstrates:
+This project demonstrates:
 - OOP principles
 - Working with the Python standard library
 - Testing code using unittest
