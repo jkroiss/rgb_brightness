@@ -3,7 +3,7 @@ import math
 from typing import Tuple
 
 class Color:
-    '''
+    """
     Class representing a color with optional metadata.
 
     Attributes:
@@ -14,8 +14,8 @@ class Color:
         name (str | None): Optional name of the color.
         theme (str | None): Optional theme of the color.
         group (str | None): Optional group of the color.)
-        rgb_string (str | none): Optional string representing the rgb-values, e.g. '255,0,0' for red.
-    '''
+        rgb_string (str | None): Optional string representing the rgb-values, e.g. '255,0,0' for red.
+    """
 
     def __init__(self, hex_string: str, name: str | None = None, theme: str | None = None, group: str | None = None, 
                  rgb_string: str | None = None):
@@ -31,20 +31,20 @@ class Color:
         self.rgb_string = rgb_string
 
     def get_brightness(self) -> float:
-        ''' 
-        Calculates the brightness of a color based on its' rgb-values. 
+        """
+        Calculates the brightness of a color based on its rgb-values. 
         
         Uses the forumla: sqrt(0.241 * R^2 + 0.691 * G^2 + 0.068 * B^2)     
 
         Returns:
             float: The brightness of the color.    
-        '''
+        """
         
         color_brightness = math.sqrt(0.241 * self.r**2 + 0.691 * self.g**2 + 0.068 * self.b**2)
         return color_brightness
 
     def _parse_hex_string(self, hex_string: str) -> Tuple[int, int, int]:
-        '''
+        """
         Converts a string containing a hexadecimal representation of rgb-values into its' integer components.
 
         Supports:
@@ -60,8 +60,8 @@ class Color:
         Raises:
             ValueError: If the sring contains an invalid character.
             ValueError: If the string does no contain a supported hexadecimal representation.
-        '''
-        hex_string = hex_string.strip('#').upper().strip()
+        """
+        hex_string = hex_string.strip().strip('#').upper()
 
         for char in hex_string:
             if char not in '0123456789ABCDEF':
