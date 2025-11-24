@@ -33,7 +33,7 @@ class ColorFactory:
             # Note: macOS workaround for SSL certificate verification; local development only
             context = ssl._create_unverified_context()
             req = request.Request(url, headers={'User-Agent': 'ColorAnalyzer'})
-            with request.urlopen(req, timeout=100, context=context) as response:
+            with request.urlopen(req, timeout=10, context=context) as response:
                 data = response.read().decode('utf-8')
                 colors = json.loads(data)['colors']
         except URLError as e:
