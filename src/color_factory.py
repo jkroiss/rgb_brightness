@@ -1,11 +1,13 @@
 
+import json
+
 from typing import List
 from urllib import request
 
 from src.color import Color
 
 class ColorFactory:   
-    
+    ''' Factory for creating collections of Color-objects from different sources.'''
     @staticmethod
     def from_hex_list(color_list: List[str]) -> List[Color]:
         '''
