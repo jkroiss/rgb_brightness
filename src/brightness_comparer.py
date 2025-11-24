@@ -10,7 +10,7 @@ class BrightnessComparer:
     """
 
     @staticmethod
-    def get_brightest_color(colors: List[Color]):
+    def get_brightest_color(colors: List[Color]) -> Color:
         """Function that finds the brightest color in a list of Color-Objects."""
         if not colors:
             raise ValueError("No list of colors provided.")
