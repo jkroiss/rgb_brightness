@@ -30,7 +30,7 @@ class ColorFactory:
             ValueError: If the url or the json format is invalid.
         '''
         try:
-            # Note: macOS workaround for SSL certificate verification.
+            # Note: macOS workaround for SSL certificate verification; local development only
             context = ssl._create_unverified_context()
             req = request.Request(url, headers={'User-Agent': 'ColorAnalyzer'})
             with request.urlopen(req, timeout=100, context=context) as response:
