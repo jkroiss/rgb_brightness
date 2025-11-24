@@ -13,9 +13,9 @@ from src.color_factory import ColorFactory
 from src.color import Color
 
 class TestColorFactory(unittest.TestCase):
-    '''Tests for the ColorFactory-class.'''
+    """Tests for the ColorFactory-class."""
     def test_from_hex_list(self):
-        '''Tests the correct creation of Color-objects from a list of rgb-values in hexadecimal representation.'''
+        """Tests the correct creation of Color-objects from a list of rgb-values in hexadecimal representation."""
         hex_list = ["#AABBCC", "#154331", "#A0B1C2", "#000000", "#FFFFFF"]
         colors = ColorFactory.from_hex_list(hex_list)
         self.assertEqual(len(colors), 5)
@@ -23,7 +23,7 @@ class TestColorFactory(unittest.TestCase):
             self.assertIsInstance(element, Color)
 
     def test_from_css_colors_api(self):
-        '''Tests the correct creation of Color-objects from the css-colors API.'''
+        """Tests the correct creation of Color-objects from the css-colors API."""
         url = "https://csscolorsapi.com/api/colors" 
         context = ssl._create_unverified_context()
         req = request.Request(url, headers={'User-Agent': 'ColorAnalyzer'})
@@ -36,13 +36,13 @@ class TestColorFactory(unittest.TestCase):
             self.assertIsInstance(element, Color)
     
     def test_from_css_colors_api_with_invalid_url(self):
-        '''Tests the Error handling when using an invalid url.'''
+        """Tests the Error handling when using an invalid url."""
         url = "https://invalid_test_url_for_from_css_colors_api_1337_42.com/api/colors"
         with self.assertRaises(URLError):
             ColorFactory.from_css_colors_api(url)
 
     def test_from_css_colors_api_with_invalid_json_format(self):
-       '''Tests the Error handling when using an invalid json format.'''
+       """Tests the Error handling when using an invalid json format."""
        url = "https://www.example.com"
        with self.assertRaises(json.JSONDecodeError):
            ColorFactory.from_css_colors_api(url)
