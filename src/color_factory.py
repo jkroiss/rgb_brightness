@@ -9,15 +9,15 @@ from urllib.error import URLError
 from src.color import Color
 
 class ColorFactory:   
-    '''Factory-type class for creating collections of Color-objects from different sources.'''
+    """Factory-type class for creating collections of Color-objects from different sources."""
     @staticmethod
     def from_hex_list(color_list: List[str]) -> List[Color]:
-        '''Function that creates a list of Color-objects from a list of hex-strings.'''
+        """Function that creates a list of Color-objects from a list of hex-strings."""
         return [Color(hex_string) for hex_string in color_list] 
 
     @staticmethod
     def from_css_colors_api(url: str) -> List[Color]:
-        '''
+        """
         Function that creates a list of Color-objects from the CSS colors API.
 
         Args:
@@ -27,8 +27,8 @@ class ColorFactory:
             List[Color]: The list of the created Color-objects.
 
         Raises: 
-            ValueError: If the url or the json format is invalid.
-        '''
+            ValueError: If the url or the JSON format is invalid.
+        """
         try:
             # Note: macOS workaround for SSL certificate verification; local development only
             context = ssl._create_unverified_context()
