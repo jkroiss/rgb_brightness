@@ -13,7 +13,7 @@ class Color:
         b (int): Blue color component.
         name (str | None): Optional name of the color.
         theme (str | None): Optional theme of the color.
-        group (str | None): Optional group of the color.)
+        group (str | None): Optional group of the color.
         rgb_string (str | None): Optional string representing the rgb-values, e.g. '255,0,0' for red.
     """
 
