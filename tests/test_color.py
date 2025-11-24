@@ -11,7 +11,7 @@ from src.color import Color
 class TestColor(unittest.TestCase):
     """Tests for the Color-class."""
     def test_parse_full_hex_string(self):
-        """Tests the parsing of a string containing a full hexadecimal representaton of an RGB-value."""
+        """Tests the parsing of a string containing a full hexadecimal representation of an RGB-value."""
         hex_string = '#AABBCC'
         color = Color(hex_string)
         self.assertEqual(color.r, 170)
@@ -19,7 +19,7 @@ class TestColor(unittest.TestCase):
         self.assertEqual(color.b, 204)
 
     def test_parse_short_hex_string(self):
-        """Tests the parsing of a string containing a shortened hexadecimal representaton of an RGB-value."""
+        """Tests the parsing of a string containing a shortened hexadecimal representation of an RGB-value."""
         hex_string = '#ABC'
         color = Color(hex_string)
         self.assertEqual(color.r, 170)
@@ -35,7 +35,7 @@ class TestColor(unittest.TestCase):
         self.assertEqual(color.b, 204)
 
     def test_invalid_hex_string_characters(self):
-        """Tests Error handling for strings with charcters outside of the hexadecimal range."""
+        """Tests Error handling for strings with characters outside of the hexadecimal range."""
         with self.assertRaisesRegex(ValueError, "Invalid hexadecimal representation."):
             Color('#JJJJJJ')
     
