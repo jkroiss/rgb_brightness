@@ -27,7 +27,7 @@ from src.color_factory import ColorFactory
 hex_list = ["#AABBCC", "#154331", "#A0B1C2", "#000000", "#FFFFFF"]
 colors = ColorFactory.from_hex_list(hex_list)
 BrightnessComparer.print_brightest_color(colors)
-````
+```
 
 ## Run demo
 Make sure that the current directory is the root directory.
