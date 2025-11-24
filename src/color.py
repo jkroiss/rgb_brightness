@@ -34,7 +34,7 @@ class Color:
         """
         Calculates the brightness of a color based on its rgb-values. 
         
-        Uses the forumla: sqrt(0.241 * R^2 + 0.691 * G^2 + 0.068 * B^2)     
+        Uses the formula: sqrt(0.241 * R^2 + 0.691 * G^2 + 0.068 * B^2)     
 
         Returns:
             float: The brightness of the color.    
@@ -45,10 +45,10 @@ class Color:
 
     def _parse_hex_string(self, hex_string: str) -> Tuple[int, int, int]:
         """
-        Converts a string containing a hexadecimal representation of rgb-values into its' integer components.
+        Converts a string containing a hexadecimal representation of rgb-values into its integer components.
 
         Supports:
-            - Full hexadecimal represention, e.g. '#RRGGBB' or 'RRGGBB'.
+            - Full hexadecimal representation, e.g. '#RRGGBB' or 'RRGGBB'.
             - Short hexadecimal representation, e.g. '#RGB' or 'RGB'', which is then expanded.
 
         Args: 
@@ -58,8 +58,8 @@ class Color:
             Tuple[int, int, int]: The rgb-values of the color as integers. 
 
         Raises:
-            ValueError: If the sring contains an invalid character.
-            ValueError: If the string does no contain a supported hexadecimal representation.
+            ValueError: If the string contains an invalid character.
+            ValueError: If the string does not contain a supported hexadecimal representation.
         """
         hex_string = hex_string.strip().strip('#').upper()
 
