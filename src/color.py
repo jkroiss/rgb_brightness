@@ -18,6 +18,8 @@ class Color:
         """
 
         self.hex_string = hex_string
+        
+        # Obtain the rgb-values as integers.
         self.r, self.g, self.b = self._parse_hex_string(self.hex_string)
 
         # In the following attributes, additional information is stored, if something like an api provides it.
