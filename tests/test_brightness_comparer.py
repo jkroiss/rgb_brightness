@@ -12,7 +12,7 @@ from src.color import Color
 
 class TestBrightnessComparer(unittest.TestCase):
     ''' 
-    Tests for the BrightnesComparer class.
+    Tests for the BrightnessComparer class.
     
     Tests the retrieval of the brightest color and the formatting of it.
     '''
