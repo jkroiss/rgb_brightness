@@ -16,7 +16,7 @@ class ColorFactory:
         return [Color(hex_string) for hex_string in color_list] 
 
     @staticmethod
-    def from_css_colors_api(url) -> List[Color]:
+    def from_css_colors_api(url: str) -> List[Color]:
         '''
         Function that creates a list of Color-objects from the CSS colors API.
 
