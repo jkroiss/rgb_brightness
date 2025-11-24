@@ -22,9 +22,51 @@ class TestColorFactory(unittest.TestCase):
         for element in colors:
             self.assertIsInstance(element, Color)
 
-    def test_from_css_colors_api(self) -> None:
+    def test_from_css_colors_api_all(self) -> None:
         """Tests the correct creation of Color-objects from the css-colors API."""
         url = "https://csscolorsapi.com/api/colors" 
+        # Note: macOS workaround for SSL certificate verification; local development only
+        context = ssl._create_unverified_context()
+        req = request.Request(url, headers={'User-Agent': 'ColorAnalyzer'})
+        with request.urlopen(req, timeout=10, context=context) as response:
+            data = response.read().decode('utf-8')
+            colors_from_api = json.loads(data)['colors']
+        colors = ColorFactory.from_css_colors_api(url)
+        self.assertEqual(len(colors), len(colors_from_api))
+        for element in colors:
+            self.assertIsInstance(element, Color)
+
+    def test_from_css_colors_api_group(self) -> None:
+        """Tests the correct creation of Color-objects from a group from the css-colors API."""
+        url = "https://csscolorsapi.com/api/colors/group/blue" 
+        # Note: macOS workaround for SSL certificate verification; local development only
+        context = ssl._create_unverified_context()
+        req = request.Request(url, headers={'User-Agent': 'ColorAnalyzer'})
+        with request.urlopen(req, timeout=10, context=context) as response:
+            data = response.read().decode('utf-8')
+            colors_from_api = json.loads(data)['colors']
+        colors = ColorFactory.from_css_colors_api(url)
+        self.assertEqual(len(colors), len(colors_from_api))
+        for element in colors:
+            self.assertIsInstance(element, Color)
+
+    def test_from_css_colors_api_single_color(self) -> None:
+        """Tests the correct creation of a single color from the CSS colors API."""
+        url = "https://csscolorsapi.com/api/colors/CadetBlue" 
+        # Note: macOS workaround for SSL certificate verification; local development only
+        context = ssl._create_unverified_context()
+        req = request.Request(url, headers={'User-Agent': 'ColorAnalyzer'})
+        with request.urlopen(req, timeout=10, context=context) as response:
+            data = response.read().decode('utf-8')
+            colors_from_api = [json.loads(data)['data']]
+        colors = ColorFactory.from_css_colors_api(url)
+        self.assertEqual(len(colors), len(colors_from_api))
+        for element in colors:
+            self.assertIsInstance(element, Color)
+
+    def test_from_css_colors_api_theme(self) -> None:
+        """Tests the correct creation of Color-objects from a theme from the css-colors API."""
+        url = "https://csscolorsapi.com/api/colors/theme/dark" 
         # Note: macOS workaround for SSL certificate verification; local development only
         context = ssl._create_unverified_context()
         req = request.Request(url, headers={'User-Agent': 'ColorAnalyzer'})
