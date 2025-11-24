@@ -25,6 +25,7 @@ class TestColorFactory(unittest.TestCase):
     def test_from_css_colors_api(self):
         """Tests the correct creation of Color-objects from the css-colors API."""
         url = "https://csscolorsapi.com/api/colors" 
+        # Note: macOS workaround for SSL certificate verification; local development only
         context = ssl._create_unverified_context()
         req = request.Request(url, headers={'User-Agent': 'ColorAnalyzer'})
         with request.urlopen(req, timeout=10, context=context) as response:
