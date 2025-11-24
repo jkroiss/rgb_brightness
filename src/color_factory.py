@@ -38,8 +38,6 @@ class ColorFactory:
                 colors = json.loads(data)['colors']
         except URLError as e:
             raise ValueError(f"Failed to get data from the API: {e}") from e
-        except json.JSONDecodeError as e:
-            raise ValueError(f"Failed to parse json from the API: {e}") from e
         
         return [
             Color(
