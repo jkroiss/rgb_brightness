@@ -16,21 +16,21 @@ class TestBrightnessComparer(unittest.TestCase):
     
     Tests the retrieval of the brightest color and the formatting of it.
     '''
-    def test_get_brightest_color(self):
+    def test_get_brightest_color(self) -> None:
         '''Tests the retrieval of the brightest color.'''
         hex_list = ["#AABBCC", "#154331", "#A0B1C2", "#000000", "#FFFFFF"]
         colors = ColorFactory.from_hex_list(hex_list)
         brightest = BrightnessComparer.get_brightest_color(colors)
         self.assertEqual(brightest.hex_string.upper(), '#FFFFFF')
 
-    def test_format_brightest_color_without_name(self):
+    def test_format_brightest_color_without_name(self) -> None:
         '''Test the formatting of the brightest color without a name.'''
         color = Color('#AABBCC')
         formatted = BrightnessComparer.format_brightest_color(color)
         expected = 'The brightest color is: #AABBCC (r=170, g=187, b=204)'
         self.assertEqual(formatted, expected)
 
-    def test_format_brightest_color_with_name(self):
+    def test_format_brightest_color_with_name(self) -> None:
         '''Test the formatting of the brightest color with a name.'''
         color = Color('#AABBCC', name='Test Color')
         formatted = BrightnessComparer.format_brightest_color(color)

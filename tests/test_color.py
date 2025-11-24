@@ -10,7 +10,7 @@ from src.color import Color
 
 class TestColor(unittest.TestCase):
     """Tests for the Color-class."""
-    def test_parse_full_hex_string(self):
+    def test_parse_full_hex_string(self) -> None:
         """Tests the parsing of a string containing a full hexadecimal representation of an RGB-value."""
         hex_string = '#AABBCC'
         color = Color(hex_string)
@@ -18,7 +18,7 @@ class TestColor(unittest.TestCase):
         self.assertEqual(color.g, 187)
         self.assertEqual(color.b, 204)
 
-    def test_parse_short_hex_string(self):
+    def test_parse_short_hex_string(self) -> None:
         """Tests the parsing of a string containing a shortened hexadecimal representation of an RGB-value."""
         hex_string = '#ABC'
         color = Color(hex_string)
@@ -26,7 +26,7 @@ class TestColor(unittest.TestCase):
         self.assertEqual(color.g, 187)
         self.assertEqual(color.b, 204)
 
-    def test_parse_hex_string_without_hash(self):
+    def test_parse_hex_string_without_hash(self) -> None:
         """Tests the parsing of a hexadecimal string representing RGB-values without the leading hash."""
         hex_string = 'AABBCC'
         color = Color(hex_string)
@@ -34,12 +34,12 @@ class TestColor(unittest.TestCase):
         self.assertEqual(color.g, 187)
         self.assertEqual(color.b, 204)
 
-    def test_invalid_hex_string_characters(self):
+    def test_invalid_hex_string_characters(self) -> None:
         """Tests Error handling for strings with characters outside of the hexadecimal range."""
         with self.assertRaisesRegex(ValueError, "Invalid hexadecimal representation."):
             Color('#JJJJJJ')
     
-    def test_invalid_hex_string_length(self):
+    def test_invalid_hex_string_length(self) -> None:
         """Tests Error handling for strings of incorrect lengths (i.e. not 3 or 6 hexadecimal digits)"""
         with self.assertRaisesRegex(ValueError, "Incorrect hexadecimal representation of RGB-values\."):
             Color('#1A')
@@ -47,7 +47,7 @@ class TestColor(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Incorrect hexadecimal representation of RGB-values\."):
             Color('#1234567')
 
-    def test_brightness_calculation(self):
+    def test_brightness_calculation(self) -> None:
         """Tests the brightness calculation."""
         color = Color('#AABBCC')
         r = 170
@@ -56,7 +56,7 @@ class TestColor(unittest.TestCase):
         expected_brightness = math.sqrt(0.241 * r**2 + 0.691 * g**2 + 0.068 * b**2)
         self.assertAlmostEqual(color.get_brightness(), expected_brightness)
 
-    def test_optional_attributes(self):
+    def test_optional_attributes(self) -> None:
         """Tests whether the optional attributes are set correctly."""
         color = Color(
             '#AABBCC',
