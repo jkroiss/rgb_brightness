@@ -31,7 +31,7 @@ class TestColorFactory(unittest.TestCase):
     def test_from_css_colors_api_all(self) -> None:
         """Tests the correct creation of Color-objects from the css-colors API."""
         url = "https://csscolorsapi.com/api/colors" 
-        req = request.Request(url, headers={'User-Agent': 'ColorAnalyzer'})
+        req = request.Request(url, headers={'User-Agent': 'BrightnessComparer'})
         with request.urlopen(req, timeout=10, context=self.context) as response:
             data = response.read().decode('utf-8')
             colors_from_api = json.loads(data)['colors']
@@ -43,7 +43,7 @@ class TestColorFactory(unittest.TestCase):
     def test_from_css_colors_api_group(self) -> None:
         """Tests the correct creation of Color-objects from a group from the css-colors API."""
         url = "https://csscolorsapi.com/api/colors/group/blue" 
-        req = request.Request(url, headers={'User-Agent': 'ColorAnalyzer'})
+        req = request.Request(url, headers={'User-Agent': 'BrightnessComparer'})
         with request.urlopen(req, timeout=10, context=self.context) as response:
             data = response.read().decode('utf-8')
             colors_from_api = json.loads(data)['colors']
@@ -55,7 +55,7 @@ class TestColorFactory(unittest.TestCase):
     def test_from_css_colors_api_single_color(self) -> None:
         """Tests the correct creation of a single color from the CSS colors API."""
         url = "https://csscolorsapi.com/api/colors/CadetBlue" 
-        req = request.Request(url, headers={'User-Agent': 'ColorAnalyzer'})
+        req = request.Request(url, headers={'User-Agent': 'BrightnessComparer'})
         with request.urlopen(req, timeout=10, context=self.context) as response:
             data = response.read().decode('utf-8')
             colors_from_api = [json.loads(data)['data']]
@@ -67,7 +67,7 @@ class TestColorFactory(unittest.TestCase):
     def test_from_css_colors_api_theme(self) -> None:
         """Tests the correct creation of Color-objects from a theme from the css-colors API."""
         url = "https://csscolorsapi.com/api/colors/theme/dark" 
-        req = request.Request(url, headers={'User-Agent': 'ColorAnalyzer'})
+        req = request.Request(url, headers={'User-Agent': 'BrightnessComparer'})
         with request.urlopen(req, timeout=10, context=self.context) as response:
             data = response.read().decode('utf-8')
             colors_from_api = json.loads(data)['colors']
