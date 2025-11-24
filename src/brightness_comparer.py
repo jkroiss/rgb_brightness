@@ -11,7 +11,7 @@ class BrightnessComparer:
 
     @staticmethod
     def get_brightest_color(colors: List[Color]) -> Color:
-        """Function that finds the brightest color in a list of Color-Objects."""
+        """Finds the brightest color in a list of Color-Objects."""
         if not colors:
             raise ValueError("No list of colors provided.")
 
@@ -19,7 +19,7 @@ class BrightnessComparer:
 
     @staticmethod
     def format_brightest_color(color: Color) -> str:
-        """Function that formats the brightest Color-object into a human-readable output string"""
+        """Formats the brightest Color-object into a human-readable output string"""
         hex_string = color.hex_string
         if not hex_string.startswith('#'):
             hex_string = '#' + hex_string
