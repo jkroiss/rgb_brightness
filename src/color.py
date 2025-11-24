@@ -3,23 +3,22 @@ import math
 from typing import Tuple
 
 class Color:
-    """
-    Class representing a color with optional metadata.
-
-    Attributes:
-        hex_string (str): Hexadecimal string representing the actual color.
-        r (int): Red color component.
-        g (int): Green color component.
-        b (int): Blue color component.
-        name (str | None): Optional name of the color.
-        theme (str | None): Optional theme of the color.
-        group (str | None): Optional group of the color.
-        rgb_string (str | None): Optional string representing the rgb-values, e.g. '255,0,0' for red.
-    """
+    """Class representing a color with optional metadata."""
 
     def __init__(self, hex_string: str, name: str | None = None, theme: str | None = None, group: str | None = None, 
                  rgb_string: str | None = None) -> None:
-        '''Initializes a Color-object with optional metadata.'''
+        """
+        Args:
+            Initializes a Color-object with optional metadata.
+            hex_string (str): Hexadecimal string representing the actual color.
+            r (int): Red color component.
+            g (int): Green color component.
+            b (int): Blue color component.
+            name (str | None): Optional name of the color.
+            theme (str | None): Optional theme of the color.
+            group (str | None): Optional group of the color.
+            rgb_string (str | None): Optional string representing the rgb-values, e.g. '255,0,0' for red.
+        """
 
         self.hex_string = hex_string
         self.r, self.g, self.b = self._parse_hex_string(self.hex_string)
