@@ -15,7 +15,7 @@ from src.color import Color
 class TestColorFactory(unittest.TestCase):
     '''Tests for the ColorFactory-class.'''
     def test_from_hex_list(self):
-        '''Tests the correct creation of Color-objects from a list of hex-strings.'''
+        '''Tests the correct creation of Color-objects from a list of rgb-values in hexadecimal representation.'''
         hex_list = ["#AABBCC", "#154331", "#A0B1C2", "#000000", "#FFFFFF"]
         colors = ColorFactory.from_hex_list(hex_list)
         self.assertEqual(len(colors), 5)
