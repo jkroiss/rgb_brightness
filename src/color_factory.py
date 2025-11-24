@@ -27,7 +27,7 @@ class ColorFactory:
             List[Color]: The list of the created Color-objects.
 
         Raises: 
-            ValueError: If the url or the JSON format is invalid.
+            ValueError: If the url is invalid.
         """
         try:
             # Note: macOS workaround for SSL certificate verification; local development only
