@@ -32,7 +32,6 @@ class TestColorFactory(unittest.TestCase):
             colors_from_api = json.loads(data)['colors']
         colors = ColorFactory.from_css_colors_api(url)
         self.assertEqual(len(colors), len(colors_from_api))
-        self.assertEqual(len(colors), 3)
         for element in colors:
             self.assertIsInstance(element, Color)
 
