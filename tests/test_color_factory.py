@@ -4,6 +4,7 @@ from pathlib import Path
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
+import ssl
 import unittest
 import json
 from urllib import request
@@ -17,18 +18,16 @@ class TestColorFactory(unittest.TestCase):
         '''Tests the correct creation of Color-objects from a list of hex-strings.'''
         hex_list = ["#AABBCC", "#154331", "#A0B1C2", "#000000", "#FFFFFF"]
         colors = ColorFactory.from_hex_list(hex_list)
-        self.assertEqual(len(colors), 3)
+        self.assertEqual(len(colors), 5)
         for element in colors:
             self.assertIsInstance(element, Color)
 
     def test_from_css_colors_api(self):
         '''Tests the correct creation of Color-objects from the css-colors API.'''
-        url = "https://csscolorsapi.com/api/colors"
-        req = request.Request(
-                url, 
-                headers={'User-Agent': 'ColorAnalyzer'}
-            )
-        with request.urlopen(req, timeout=10) as response:
+        url = "https://csscolorsapi.com/api/colors" 
+        context = ssl._create_unverified_context()
+        req = request.Request(url, headers={'User-Agent': 'ColorAnalyzer'})
+        with request.urlopen(req, timeout=10, context=context) as response:
             data = response.read().decode('utf-8')
             colors_from_api = json.loads(data)['colors']
         colors = ColorFactory.from_css_colors_api(url)
