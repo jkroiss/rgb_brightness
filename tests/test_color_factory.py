@@ -27,7 +27,7 @@ class TestColorFactory(unittest.TestCase):
                 url, 
                 headers={'User-Agent': 'ColorAnalyzer'}
             )
-        with request.urlopen(req, timeout=100) as response:
+        with request.urlopen(req, timeout=10) as response:
             data = response.read().decode('utf-8')
             colors_from_api = json.loads(data)['colors']
         colors = ColorFactory.from_css_colors_api(url)
