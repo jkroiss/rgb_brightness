@@ -30,7 +30,7 @@ class BrightnessComparer:
         
         
     @staticmethod
-    def print_brightest_color(colors) -> None:
+    def print_brightest_color(colors: List[Color]) -> None:
         """Function that finds and prints the brightest Color-object in a list of Color-objects."""
         brightest = BrightnessComparer.get_brightest_color(colors)
         output = BrightnessComparer.format_brightest_color(brightest)
