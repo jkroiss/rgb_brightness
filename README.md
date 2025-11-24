@@ -29,6 +29,9 @@ colors = ColorFactory.from_hex_list(hex_list)
 BrightnessComparer.print_brightest_color(colors)
 ```
 
+## Example Output
+The brightest color is: #FFFFFF (r=255, g=255, b=255)
+
 ## Run demo
 Make sure that the directory that this is run from is the root directory.
 
