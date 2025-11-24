@@ -7,6 +7,7 @@ sys.path.insert(0, str(project_root))
 import unittest
 import json
 from urllib import request
+from urllib.error import URLError
 from src.color_factory import ColorFactory
 from src.color import Color
 
@@ -35,6 +36,18 @@ class TestColorFactory(unittest.TestCase):
         self.assertEqual(len(colors), 3)
         for element in colors:
             self.assertIsInstance(element, Color)
+
+    def test_from_css_colors_api_with_invalid_url(self):
+        '''Tests the Error handling when using an invalid url.'''
+        url = "https://invalid_test_url_for_from_css_colors_api_1337_42.com/api/colors"
+        with self.assertRaises(URLError):
+            ColorFactory.from_css_colors_api(url)
+
+    def test_from_css_colors_api_with_invalid_json_format(self):
+        '''Tests the Error handling when using an invalid json format.'''
+        url = "https://www.example.com"
+        with self.assertRaises(json.JSONDecodeError):
+            ColorFactory.from_css_colors_api(url)
 
 if __name__ == '__main__':
     unittest.main()
