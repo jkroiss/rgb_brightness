@@ -7,6 +7,7 @@ A little application to find the brightest color in a collection of colors repre
 This project demonstrates:
 - OOP principles
 - Working with the Python standard library
+- Usage of the CSS Colors API
 - Testing code using unittest
 
 Formula used for brightness calculation: sqrt(0.241 * R^2 + 0.691 * G^2 + 0.068 * B^2) 
